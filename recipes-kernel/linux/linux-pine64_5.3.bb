@@ -6,11 +6,13 @@ LIC_FILES_CHKSUM = "file://${S}/COPYING;md5=bbea815ee2795b2f4230826c0c6b8814"
 inherit kernel
 require recipes-kernel/linux/linux-yocto.inc
 
-LINUX_VERSION ?= "5.2"
+LINUX_VERSION ?= "5.3.0"
 LINUX_VERSION_EXTENSION = "-pine64"
 
-BRANCH = "sunxi64-5.2"
-SRCREV = "3c0ea3bedc07d93945ddc50e8bac7bdae30df08a"
+PV = "${LINUX_VERSION}+git${SRCPV}"
+
+BRANCH = "sunxi64-5.3"
+SRCREV = "c1533c70af80ea1cb25348e4931455e932f26af1"
 SRC_URI = " \
            git://github.com/anarsoul/linux-2.6.git;branch=${BRANCH} \
            file://extra.cfg \
